@@ -1,0 +1,33 @@
+{% load static tailwind_tags %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title %}My Site{% endblock %}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    {% tailwind_css %}
+</head>
+
+<body class="bg-gray-100 font-serif leading-normal tracking-normal min-h-screen">
+
+    <header class="bg-white shadow p-4">
+        <h1 class="text-2xl font-bold">{% block header %}Tailiwind Bootcamp{% endblock %}</h1>
+    </header>
+
+    <main class="p-4">
+        {% block content %}
+        <!-- Default content -->
+        {% endblock %}
+    </main>
+
+    <footer class="bg-white shadow p-4 text-center mt-10">
+        {% block footer %}© {{ year|default:"2025" }} Tailwind Bootcamp{% endblock %}
+    </footer>
+
+</body>
+</html>
